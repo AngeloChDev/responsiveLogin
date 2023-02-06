@@ -41,7 +41,7 @@ body {
     font-size: 2.2em;
     text-align: center;
     position: relative;
-    color:indianred;
+    color:firebrick;
 }
 @keyframes pjump{
 
@@ -60,7 +60,7 @@ body {
     border: solid 3px brown;
     height:50vh;
     width: 50vw;
-    background-color: blueviolet;
+    background-color:lightslategray;
     align-items: center;
     justify-content: center;
     animation: log 6s;
@@ -73,7 +73,7 @@ body {
     100%{opacity: 1;}
 }
 .form{
-    transform:translate(-20%,20%) ;
+    transform:translate(-16%,20%) ;
     padding:15px;
     display: inline-block;
     /*vertical-align: middle;*/
@@ -93,7 +93,7 @@ body {
     height: 20vh;
     width: 10vw;
     border-radius: 30px;
-    transform: translate(330%,-120%);
+    transform: translate(200%,-120%);
     background: url('./ck.png') no-repeat;
 
 }
@@ -101,20 +101,24 @@ body {
 
 @media screen and (max-width: 1200px)
 {
-    .h_t{
+    .h_t{text-align: center;
         font-size: 2.5em;
     }
 
-    .p_T{
+    .p_T{text-align: center;
         font-size: 1.9em;
     }
 
-    .L_in{height:65vh;}
+    .L_in{
+        height:65vh;
+        width:75vw;
+        transform: translateX(20%)
+    }
 
     .form{
         padding:8px;
         font-size: 1.7em;
-        transform: translate(5%,-10%);
+       transform: translateY(5%);
     }
     .inpt{width:25vw;
         height:5vh;
