@@ -18,6 +18,7 @@ body {
 }
 
 .h_T{
+    text-shadow: 2px 2px 5px #fff;
     animation: bounce 3.5s;
     font-family: Comic Sans MS;
     font-weight: 600;
@@ -33,13 +34,14 @@ body {
 
 .p_T{
     animation: pjump 6s;
-    margin-top: -2em;
+    margin-top: -1.8em;
     margin-left: 0.4em;
     font-family: Comic Sans MS;
     font-weight: 400;
     font-size: 2.2em;
     text-align: center;
     position: relative;
+    color:indianred;
 }
 @keyframes pjump{
 
@@ -79,7 +81,7 @@ body {
     font-size: 1.7em;    
 }
 .inpt{
-    
+    width:80%;
     font-family: Comic Sans MS;
     border-radius: 30px;
     height: 2.1em;
@@ -91,7 +93,35 @@ body {
     height: 20vh;
     width: 10vw;
     border-radius: 30px;
-    transform: translate(170%,-90%);
+    transform: translate(330%,-120%);
     background: url('./ck.png') no-repeat;
 
+}
+
+
+@media screen and (max-width: 1200px)
+{
+    .h_t{
+        font-size: 2.5em;
+    }
+
+    .p_T{
+        font-size: 1.9em;
+    }
+
+    .L_in{height:65vh;}
+
+    .form{
+        padding:8px;
+        font-size: 1.7em;
+        transform: translate(5%,-10%);
+    }
+    .inpt{width:25vw;
+        height:5vh;
+    }
+    .btnIN{
+        height:22vh;
+        width:25vw;
+        transform:translate(7%,20%)
+    }
 }
