@@ -1,17 +1,97 @@
-body{
+body {
     padding:0;
     margin: 0;
     box-sizing: border-box;
     display: flex;
-    height: 100%;
+    height: auto;
+    width: auto;
+    background-color: rgb(6, 43, 80);
+}
+.main{
     width: 100%;
-    background-color: darkslategrey;
+    
+    /*align-items: center;*/
+}
+.tit {
+    position: relative;
+    
 }
 
-.title{
+.h_T{
+    animation: bounce 3.5s;
+    font-family: Comic Sans MS;
+    font-weight: 600;
+    font-size: 4em;
+    text-align: center;
+    
+}
+@keyframes bounce{
+
+    from   {transform: translateX(-100%);}
+    to     {transform: translateX(0%);}
+}
+
+.p_T{
+    animation: pjump 6s;
+    margin-top: -2em;
+    margin-left: 0.4em;
+    font-family: Comic Sans MS;
+    font-weight: 400;
+    font-size: 2.2em;
+    text-align: center;
     position: relative;
 }
+@keyframes pjump{
 
-.title h1{
-    font-size: 4.7em
+    from   { opacity: 0   ;transform: translateY(-300%);}
+    to     { opacity: 1  ;transform: translateY(0%);}
+}
+
+.bkg{
+    height: auto;
+    width: auto;
+}
+.L_in{
+    transform: translateX(50%);
+    display: flex;
+    border-radius: 20%;
+    border: solid 3px brown;
+    height:50vh;
+    width: 50vw;
+    background-color: blueviolet;
+    align-items: center;
+    justify-content: center;
+    animation: log 6s;
+}
+@keyframes log{
+    0%{opacity: 0;}
+    70%{opacity: 0;}
+    80%{opacity: 0.25;}
+    90%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+.form{
+    transform:translate(-20%,20%) ;
+    padding:15px;
+    display: inline-block;
+    /*vertical-align: middle;*/
+    font-family: Comic Sans MS;
+    font-size: 1.7em;    
+}
+.inpt{
+    
+    font-family: Comic Sans MS;
+    border-radius: 30px;
+    height: 2.1em;
+    text-align: center;
+    background-color: lightgrey;
+}
+.btnIN{
+    border: none;
+    height: 20vh;
+    width: 10vw;
+    border-radius: 30px;
+    transform: translate(170%,-90%);
+    background: url('./ck.png') no-repeat;
+
 }
