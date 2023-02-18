@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+  --font-google: 'Rubik', sans-serif;   
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(70deg, #4fff8a, #53c0ff, #ff607b);        
+    height: 100vh;
+}
+
+nav {
+    max-width: 50rem;
+    margin: 1rem auto;
+    font-family: var(--font-google);
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* Open/close menu button */
+
+button {
+    display: block;
+    margin: 2rem auto;
+    padding: .5em 1em;
+    border: 0.25rem solid #fff;
+    color: #fff;
+    background-color: #22222200;
+    font-family: var(--font-google);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 250ms;
+    border-radius: 1em;
+}
+
+@media (min-width: 40rem) {    
+    button {
+        display: none;
+    }
+}
+
+button:hover {
+    background-color: #22222250;
+}
+
+/* Menu */
+
+.menu {
+    --color-menu-dark: #222;
+    display: none;    
+    flex-direction: column;      
+    position: relative;
+    box-shadow: 0 0 .5rem var(--color-menu-dark);
+}  
+
+@media (min-width: 40rem) {    
+    .menu {   
+        display: flex;     
+        flex-direction: row;              
+    }  
+}
+
+.menu.activated {
+    display: flex;
+}
+
+.menu--background {
+    background-color: var(--color-menu-dark);
+    color: #fff;    
+}
+
+/* Menu button */
+
+.menu__button {    
+    padding: .75em 1em;
+    cursor: pointer;
+    text-align: center;    
+    flex: 1 0 auto;
+    position: relative;   
+}
+
+.menu__button:hover {
+    background-color: #333;
+}
+
+@media (min-width: 40rem) {    
+    .menu__button--arrow {   
+        position: relative;        
+    }  
+
+    .menu__button--arrow::before {   
+        content: '▼';
+        color: #aaa;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: scale(.5, .3) translate(-50%);
+    }  
+
+    .menu__button--arrow:hover::before {   
+        display: none;
+    }  
+}
+
+/* Dropdown menu */
+
+.dropdown-container {
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+    position: relative;
+    box-shadow: 0 0 2rem #222;        
+}
+
+.dropdown-container::before {
+    content: '▼';
+    transform: scale(0.7);    
+    position: absolute;
+    color: #fff;    
+    top: -2.5rem;
+    left: 0;
+    background-color: #444;
+    border-radius: 100%;    
+    padding: .25em .55em;
+    box-shadow: 0 0 2rem #222;        
+}
+
+/* Dropdown menu - desktop */
+
+@media (min-width: 40rem) {    
+    .dropdown-container {        
+        display: block;        
+        position: absolute;
+        left: 0;          
+        box-shadow: none;
+        pointer-events: none;
+        overflow: hidden;
+        margin-top: .75rem;
+        border-radius: 0 0 .25em .25em;        
+    }
+    
+    .dropdown-container::before {                
+        display: none;      
+    }        
+}
+
+/* Dropdown menu content*/
+
+.dropdown-container > ul {    
+    background-color: #444;
+    transition: 250ms;    
+}
+
+.dropdown-container > ul > li {
+    padding-block: .75em;
+}
+
+.dropdown-container > ul > li:hover {
+    background-color: #4fff8a;
+    color: #222;      
+}
+
+.menu__button.activated .dropdown-container{
+    display: block;
+}
+
+/* Dropdown menu content - desktop */
+
+@media (min-width: 40rem) {      
+    .dropdown-container > ul {    
+        transform: translate(0, -100%);        
+    }
+   
+    .menu__button:hover > .dropdown-container {
+        pointer-events: initial;          
+    }
+
+    .menu__button:hover > .dropdown-container > ul {
+        transform: translate(0, 0);        
+    }
+  
+}
+
+/* Transparent title */
+
+.title {
+    display: none;
+}
+
+@media (min-width: 40rem) {    
+    .title {
+        display: block;
+        max-width: 50rem;
+        margin: 1rem auto;
+        font-family: var(--font-google);
+        user-select: none;
+    }
+
+    .title > h1 {
+        font-size: 7rem;
+        color: #ffffff40;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+
+<button>Menu</button>
+<nav>
+  <ul class="menu menu--background">
+    <li class="menu__button">
+    Home
+    </li>
+    <li class="menu__button menu__button--arrow">
+    Clothes
+      <div class="dropdown-container">
+        <ul>
+          <li>T-shirts</li>
+          <li>Trousers</li>
+          <li>Coats</li>                        
+          <li>Dresses</li>                        
+        </ul>
+      </div>
+    </li>
+    <li class="menu__button menu__button--arrow">
+    Products
+      <div class="dropdown-container">
+        <ul>
+          <li>Furniture</li>
+          <li>Beds</li>
+          <li>Lighting</li>                                                
+        </ul>
+      </div>
+    </li>
+    <li class="menu__button menu__button--arrow">
+    Archive
+      <div class="dropdown-container">
+        <ul>
+          <li>2021</li>
+          <li>2020</li>
+          <li>2019</li>
+          <li>2018</li>
+          <li>2017</li>
+          <li>2016</li>                     
+        </ul>
+      </div>
+    </li>
+    <li class="menu__button">
+      Contact
+    </li>
+  </ul>
+</nav>
+
+<div class="title">
+  <h1>Responsive dropdown menu</h1>
+</div>
+
+<script>
+  const button = document.querySelector('button');
+const menu = document.querySelector('.menu');
+
+button.addEventListener('click', () => {
+    menu.classList.toggle('activated');
+});
+
+const menuButtons = document.querySelectorAll('.menu__button');
+
+const menuButtonsArray = Array.from(menuButtons);
+
+menuButtonsArray.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+       closeAnotherButtons(button);       
+       button.classList.toggle('activated');       
+              
+    });
+}); 
+
+function closeAnotherButtons(activeButton) {
+
+    menuButtonsArray.forEach(button => {
+        
+        if(button != activeButton) {        
+            if(button.classList.contains('activated')) {
+                button.classList.remove('activated');           
+            } 
+        }
+
+    });
+} 
+</script>
+</body>
+</html>
