@@ -1,38 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>AngeloChDev1</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="b.css">
+    
+    <link rel="stylesheet" href="body.css">
 
-
-   
+    <title>Randroom</title>
 </head>
 <body>
-
-    <div class="main" id ="main">
-        <div class="tit">
-            <h1 class="h_T">AngeloChDev1</h1>
-            <p class="p_T">My test space</p>
-        </div>
-        <div class="bkg">
-            <div class="L_in">
-                <form class="form"method="post" action="/pag2.html" target="_blank">
-                    <label for="user">User:</label><br>
-                    <input type="text" class="inpt" name="user"><br>
-                    <label for="passwd">Password:</label><br>
-                    <input type="password" class="inpt"name="passwd"><br>
-                    <input type="submit" class="btnIN" value="">
-
-
-                </form>
+    <div class="screen">
+       
+        <div class="p_head">
+            <div class="p_title">
+                <h1 class="titles tH1">.RANDROOM.</h1>
+                <div><button>_</button></div>
             </div>
-           <div></div>
-           
+            <div  class="flex-container">
+                <nav>
+                    <ul class="menu menu--background">
+                      <li class="menu__button">
+                      Home
+                      </li>
+                      <li class="menu__button menu__button--arrow">
+                      Page_2
+                        <div class="dropdown-container">
+                          <ul>
+                            <li>Link_1</li>
+                            <li>Link_2</li>
+                            <li>Link_3</li>                       
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="menu__button menu__button--arrow">
+                      Page_3
+                        <div class="dropdown-container">
+                          <ul>
+                            <li>Link_1</li>
+                            <li>Link_2</li>                                               
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="menu__button menu__button--arrow">
+                      Page_4
+                        <div class="dropdown-container">
+                          <ul>
+                            <li>Link_1</li>
+                            <li>Link_2</li>                  
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="menu__button">
+                        Contact
+                      </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+
+        <div class="p_body">
+            <div class="box header">
+                <h1 class="titles tH1">.how it work.</h1>
+            </div>
+            <div class="box sidebar">Sidebar</div>
+            <div class="box sidebar2">Sidebar 2</div>
+            <div class="box content">
+              Content
+              <br /> When you resize the browser this column will be quite tall.
+            </div>
+            <div class="box footer">Footer</div>
+        </div>
+
+        <div class="pagefoot"></div>
     
     </div>
+
+<script>
+const button = document.querySelector('button');
+const menu = document.querySelector('.menu');
+
+button.addEventListener('click', () => {
+    menu.classList.toggle('activated');
+});
+
+const menuButtons = document.querySelectorAll('.menu__button');
+
+const menuButtonsArray = Array.from(menuButtons);
+
+menuButtonsArray.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+       closeAnotherButtons(button);       
+       button.classList.toggle('activated');       
+              
+    });
+}); 
+
+function closeAnotherButtons(activeButton) {
+
+    menuButtonsArray.forEach(button => {
+        
+        if(button != activeButton) {        
+            if(button.classList.contains('activated')) {
+                button.classList.remove('activated');           
+            } 
+        }
+
+    });
+} 
+</script>
 </body>
 </html>
